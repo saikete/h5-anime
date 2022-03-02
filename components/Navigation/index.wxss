@@ -1,0 +1,92 @@
+.topBarBox {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.statusBar {
+	width: 100%;
+}
+
+.conSpace {
+	width: 100%;
+}
+
+.barInner {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+.title {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-family: PingFangSC-Medium;
+	color: #000000;
+	text-align: center;
+	font-size: 17px;
+	padding-top: 4px;
+	box-sizing: border-box;
+}
+
+.backIcon {
+	width: 20px;
+	height: 100%;
+	position: relative;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.backIcon image {
+	height: 20px !important;
+}
+
+.homeIcon {
+	width: 17px;
+	height: 100%;
+	position: relative;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.backIcon .icon {
+	width: 20px;
+	height: 20px;
+	display: block;
+	margin-top: 7px;
+}
+
+.homeIcon .icon {
+	width: 17px;
+	height: 17px;
+	display: block;
+	margin-top: 8px;
+}
+
+.btnBox {
+	display: flex;
+}
+
+.fontWeight {
+	padding-top: 6px;
+	font-size: 16px;
+}
+
+.nav-button::after {
+	position: absolute;
+	width: 250%;
+	height: 200%;
+	opacity: 0.4;
+	content: '';
+	top: -50%;
+	left: -30%;
+	/* background: rgba(255, 0, 0, 0.6); */
+}

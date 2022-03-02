@@ -1,0 +1,7 @@
+<!-- pages/index/index.wxml -->
+<!-- <Nav title="香奈儿新春祝福" /> -->
+<Layout barHeight="{{ topBarHeight }}">
+	<!-- <view class="layout">test123</view> -->
+	<view>123123213</view>
+</Layout>
+<view>123123213</view>
