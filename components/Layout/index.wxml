@@ -1,6 +1,0 @@
-<view class="layout">
-	<view class="layout-navigation-bar" style="height: {{ barHeight}}px;min-height:{{barHeight }}px"></view>
-	<view class="layout-content">
-		<slot></slot>
-	</view>
-</view>

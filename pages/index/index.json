@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "Layout": "../../components/Layout",
-    "Nav":"../../components/Navigation"
-  }
-}
