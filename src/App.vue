@@ -2,7 +2,6 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { ref } from "vue";
-import IndPage from "./pages/index.vue";
 let a = ref(10);
 
 function btnFunc() {
@@ -11,16 +10,23 @@ function btnFunc() {
 </script>
 
 <template>
-  <div class="app">
-    <IndPage />
-  </div>
+  <router-view />
 </template>
 
-<style>
+<style lang="less">
 html,
 body {
   width: 100%;
   height: 100%;
+
+  #app {
+    width: 100%;
+    height: 100%;
+    > div {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 * {
@@ -28,13 +34,11 @@ body {
   padding: 0;
 }
 
-#app {
+img {
   width: 100%;
-  height: 100%;
 }
 
-.app {
+video {
   width: 100%;
-  height: 100%;
 }
 </style>

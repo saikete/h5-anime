@@ -1,4 +1,7 @@
 <script setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+
 const imgLIst = [
   { url: "./ELEMENTS/camilia.png" },
   { url: "./ELEMENTS/laten.png" },
@@ -28,6 +31,10 @@ const btnFunc = () => {
   text1.classList.add("btn-out");
   text2.classList.add("btn-out");
   text3.classList.add("btn-out");
+  // console.log(route);
+  setTimeout(() => {
+    router.push({ path: "/luck" });
+  }, 800);
 };
 </script>
 
@@ -54,63 +61,18 @@ const btnFunc = () => {
   </div>
 </template>
 
-<style>
+<style scoped lang="less">
 img {
   width: 100%;
-}
-
-.main {
-  width: 100%;
-  height: 100%;
-}
-
-.content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.content-inner-image {
-  /* width: 2rem; */
-}
-
-.content > div {
-  /* width: 100%; */
-}
-
-.content > div:nth-child(1) {
-  margin-top: 0.5rem;
-  animation: all 1s ease-in-out 0.2s 1 normal both running;
-}
-
-.content > div:nth-child(1) img {
-  width: 4rem;
-}
-
-.content > div:nth-child(2) {
-  margin-top: 0.3rem;
-  font-size: 0.4rem;
-  color: #d4a672;
-  animation: all 0.8s ease-in-out 1s 1 normal both running;
-}
-
-.content > div:nth-child(3) {
-  font-size: 0.4rem;
-  color: #d4a672;
-  margin-top: 0.1rem;
-  animation: all 0.8s ease-in-out 1s 1 normal both running;
 }
 
 .anima {
   width: 100%;
   height: 100%;
+
   position: absolute;
   transform: translate(0, 0);
   overflow: hidden;
-  /* animation: all 1s ease-in-out 0.2s 1 normal both running; */
 }
 
 @keyframes all {
@@ -120,18 +82,6 @@ img {
   100% {
     opacity: 1;
   }
-}
-
-/* @keyframes text {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-} */
-.main .content .btn-out {
-  animation: btn-out 0.8s ease-in-out 0s 1 normal both running;
 }
 
 @keyframes btn-out {
@@ -155,12 +105,114 @@ button {
 
 .content-inner-image {
   position: absolute;
+
+  &:nth-child(1) {
+    transform: translate(-1.8rem, -1.2rem) rotate(30deg);
+    width: 2.8rem;
+    animation: first 1s ease-in-out 0.2s 1 normal both running;
+  }
+
+  &:nth-child(2) {
+    width: 4.45rem;
+    transform: translate(6.29rem, 0) rotate(-17deg);
+    animation: second 1s ease-in-out 0.2s 1 normal both running;
+  }
+
+  &:nth-child(3) {
+    width: 3.4rem;
+    transform: translate(-3.5rem, 1.67rem) rotate(20deg);
+    animation: third 1s ease-in-out 0.2s 1 normal both running;
+  }
+
+  &:nth-child(4) {
+    transform: translate(-2.96rem, 10.99rem) rotate(-20deg);
+    width: 3.45rem;
+    animation: fourth 1s ease-in-out 0.2s 1 normal both running;
+  }
+
+  &:nth-child(5) {
+    transform: translate(2.93rem, 13.18rem) rotate(40deg);
+    width: 2.23rem;
+    animation: fifth 1s ease-in-out 0.2s 1 normal both running;
+  }
+
+  &:nth-child(6) {
+    transform: translate(5.04rem, 12.36rem) rotate(30deg);
+    width: 3rem;
+    animation: sixth 1s ease-in-out 0s 1 normal both running;
+  }
+
+  &:nth-child(7) {
+    transform: translate(7.11rem, 9.42rem) rotate(28deg);
+    width: 3.45rem;
+    animation: seventh 1s ease-in-out 0s 1 normal both running;
+  }
 }
 
-.content-inner-image:nth-child(1) {
-  transform: translate(-1.8rem, -1.2rem) rotate(30deg);
-  width: 2.8rem;
-  animation: first 1s ease-in-out 0.2s 1 normal both running;
+.main {
+  width: 100%;
+  height: 100%;
+
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .btn-out {
+      animation: btn-out 0.8s ease-in-out 0s 1 normal both running !important;
+    }
+
+    > div:nth-child(1) {
+      margin-top: 0.5rem;
+      animation: all 1s ease-in-out 0.2s 1 normal both running;
+      img {
+        width: 4rem;
+      }
+    }
+
+    > div:nth-child(2) {
+      margin-top: 0.3rem;
+      font-size: 0.4rem;
+      color: #d4a672;
+      animation: all 0.8s ease-in-out 1s 1 normal both running;
+    }
+    > div:nth-child(3) {
+      font-size: 0.4rem;
+      color: #d4a672;
+      margin-top: 0.1rem;
+      animation: all 0.8s ease-in-out 1s 1 normal both running;
+    }
+  }
+
+  .first-leave {
+    animation: first-leave 1s ease-in-out 0s 1 normal both running;
+  }
+
+  .second-leave {
+    animation: second-leave 1s ease-in-out 0s 1 normal both running;
+  }
+
+  .third-leave {
+    animation: third-leave 1s ease-in-out 0s 1 normal both running;
+  }
+
+  .fourth-leave {
+    animation: fourth-leave 1s ease-in-out 0s 1 normal both running;
+  }
+
+  .fifth-leave {
+    animation: fifth-leave 1s ease-in-out 0s 1 normal both running;
+  }
+
+  .sixth-leave {
+    animation: sixth-leave 1s ease-in-out 0s 1 normal both running;
+  }
+
+  .seventh-leave {
+    animation: seventh-leave 1s ease-in-out 0s 1 normal both running;
+  }
 }
 
 @keyframes first {
@@ -174,10 +226,6 @@ button {
   }
 }
 
-.main .first-leave {
-  animation: first-leave 1s ease-in-out 0s 1 normal both running;
-}
-
 @keyframes first-leave {
   0% {
     opacity: 1;
@@ -187,12 +235,6 @@ button {
     opacity: 0;
     transform: translate(-1.8rem, -1.2rem) rotate(30deg);
   }
-}
-
-.content-inner-image:nth-child(2) {
-  width: 4.45rem;
-  transform: translate(6.29rem, 0) rotate(-17deg);
-  animation: second 1s ease-in-out 0.2s 1 normal both running;
 }
 
 @keyframes second {
@@ -206,10 +248,6 @@ button {
   }
 }
 
-.main .second-leave {
-  animation: second-leave 1s ease-in-out 0s 1 normal both running;
-}
-
 @keyframes second-leave {
   0% {
     opacity: 1;
@@ -219,12 +257,6 @@ button {
     opacity: 0;
     transform: translate(6.29rem, 0) rotate(-17deg);
   }
-}
-
-.content-inner-image:nth-child(3) {
-  width: 3.4rem;
-  transform: translate(-3.5rem, 1.67rem) rotate(20deg);
-  animation: third 1s ease-in-out 0.2s 1 normal both running;
 }
 
 @keyframes third {
@@ -238,10 +270,6 @@ button {
   }
 }
 
-.main .third-leave {
-  animation: third-leave 1s ease-in-out 0s 1 normal both running;
-}
-
 @keyframes third-leave {
   0% {
     opacity: 1;
@@ -251,12 +279,6 @@ button {
     opacity: 0;
     transform: translate(-3.5rem, 1.67rem) rotate(20deg);
   }
-}
-
-.content-inner-image:nth-child(4) {
-  transform: translate(-2.96rem, 10.99rem) rotate(-20deg);
-  width: 3.45rem;
-  animation: fourth 1s ease-in-out 0.2s 1 normal both running;
 }
 
 @keyframes fourth {
@@ -270,10 +292,6 @@ button {
   }
 }
 
-.main .fourth-leave {
-  animation: fourth-leave 1s ease-in-out 0s 1 normal both running;
-}
-
 @keyframes fourth-leave {
   0% {
     opacity: 1;
@@ -283,12 +301,6 @@ button {
     opacity: 0;
     transform: translate(-2.96rem, 10.99rem) rotate(-20deg);
   }
-}
-
-.content-inner-image:nth-child(5) {
-  transform: translate(2.93rem, 13.18rem) rotate(40deg);
-  width: 2.23rem;
-  animation: fifth 1s ease-in-out 0.2s 1 normal both running;
 }
 
 @keyframes fifth {
@@ -302,10 +314,6 @@ button {
   }
 }
 
-.main .fifth-leave {
-  animation: fifth-leave 1s ease-in-out 0s 1 normal both running;
-}
-
 @keyframes fifth-leave {
   0% {
     opacity: 1;
@@ -315,12 +323,6 @@ button {
     opacity: 0;
     transform: translate(2.93rem, 13.18rem) rotate(40deg);
   }
-}
-
-.content-inner-image:nth-child(6) {
-  transform: translate(5.04rem, 12.36rem) rotate(30deg);
-  width: 3rem;
-  animation: sixth 1s ease-in-out 0s 1 normal both running;
 }
 
 @keyframes sixth {
@@ -334,10 +336,6 @@ button {
   }
 }
 
-.main .sixth-leave {
-  animation: sixth-leave 1s ease-in-out 0s 1 normal both running;
-}
-
 @keyframes sixth-leave {
   0% {
     opacity: 1;
@@ -349,12 +347,6 @@ button {
   }
 }
 
-.content-inner-image:nth-child(7) {
-  transform: translate(7.11rem, 9.42rem) rotate(28deg);
-  width: 3.45rem;
-  animation: seventh 1s ease-in-out 0s 1 normal both running;
-}
-
 @keyframes seventh {
   0% {
     opacity: 0;
@@ -364,10 +356,6 @@ button {
     opacity: 1;
     transform: translate(5.63rem, 9.65rem) rotate(0deg);
   }
-}
-
-.main .seventh-leave {
-  animation: seventh-leave 1s ease-in-out 0s 1 normal both running;
 }
 
 @keyframes seventh-leave {
