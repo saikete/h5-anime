@@ -8,8 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "element-plus": "^2.2.35",
+    "page-stack-vue3": "^2.0.4",
     "vue": "^3.2.25",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",

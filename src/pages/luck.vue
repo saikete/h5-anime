@@ -1,10 +1,12 @@
 <script setup>
+import { useRouter } from "vue-router";
 import { ref } from "vue";
+const router = useRouter();
 
 const isDel = ref(false);
-
 const btnFunc = () => {
-  isDel.value = true;
+  // isDel.value = true;
+  router.back();
 };
 const watchFunc = () => {
   isDel.value = true;
@@ -13,25 +15,25 @@ const watchFunc = () => {
 
 <template>
   <div id="ani-luck">
-    <div class="header">
+    <!-- <div class="header">
       <div class="content">
         <img src="../../public/change.png" alt="" />
       </div>
-    </div>
-    <div :class="`content-center ${isDel ? 'all-out' : ''}`">
+    </div> -->
+    <!-- <div :class="`content-center ${isDel ? 'all-out' : ''}`">
       <video src="../../public/ANIMATION.mp4" autoplay="autoplay" loop></video>
-    </div>
-    <div :class="`content-center ${isDel ? 'ani-show' : 'all-out'}`">
-      <!-- <video src="../../public/ANIMATION.mp4" autoplay="autoplay" loop></video> -->
+    </div> -->
+    <!-- <div :class="`content-center ${isDel ? 'ani-show' : 'all-out'}`">
+      <video src="../../public/ANIMATION.mp4" autoplay="autoplay" loop></video>
       <img src="../../public/ANIMATION/animation-4.jpg" alt="" />
-    </div>
-    <div :class="`bottom ${isDel ? 'text-dis' : ''}`">
+    </div> -->
+    <div :class="`bottom`">
       <div>点击按钮，让祝福在指尖停驻</div>
       <div>
         <button @click="btnFunc">锁定我的新年运</button>
       </div>
     </div>
-    <div :class="`bottom ${isDel ? '' : 'all-out'}`">
+    <!-- <div :class="`bottom ${isDel ? '' : 'all-out'}`">
       <div :class="`${isDel ? 'text-top' : ''}`">
         <div>恭喜你成功锁定</div>
         <div>这份香奈儿专属祝福</div>
@@ -39,7 +41,7 @@ const watchFunc = () => {
       <div :class="`${isDel ? 'text-down' : ''}`">
         <button @click="watchFunc">查看祝福</button>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
